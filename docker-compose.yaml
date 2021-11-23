@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  nginx:
+    image: nginx
+    restart: always
+    container_name: nginx-proxy
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./key:/etc/nginx/key
+    ports:
+      - 80:80
+      - 443:443
